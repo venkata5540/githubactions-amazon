@@ -27,13 +27,13 @@ jobs:
             dotnet-version: 8.0.x
 
        - name: publish application
-         run: dotnet publish Amazon.csproj -c release -o publish --no-restore
+         run: dotnet publish Amazon.csproj -c release -o publish
        - name: deploy to azure webapp
          uses: azure/webapps-deploy@v2
          with:
             app-name: 'gitamazonwebapp-001'
             package: publish
-            
+
 
 
 
