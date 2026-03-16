@@ -1,5 +1,6 @@
 name: build aspnet project
-on: workflow_dispatch
+on: 
+    workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,7 +8,7 @@ jobs:
        - name: checkout code
          uses: actions/checkout@v4
 
-       - name: Setup .Net
+       - name: Setup .NET
          uses: actions/setup-dotnet@v4
          with:
             dotnet-version: 8.0.x
@@ -16,7 +17,7 @@ jobs:
          run: dotnet restore
 
        - name: Build application
-         run: dotnet build --configuration release --no restore
+         run: dotnet build --configuration release --no-restore
 
 
 
