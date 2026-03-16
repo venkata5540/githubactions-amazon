@@ -1,0 +1,43 @@
+name: terraform infra + deploy aspnet project
+on: 
+    workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+       - name: checkout code
+         uses: actions/checkout@v3
+       - name: azure_login
+         uses: azure/login@v1
+         with:
+            creds:${{secrets.AZURE_CREDENTIALS}}
+       - name: terraform setup
+         uses: hashicorp/setup-terraform@v3
+       - name: terraform init
+         working-directory: terraform
+         run: terraform init
+       - name: terraform apply
+         working-directory: terraform
+         run: terraform apply -auto-approve
+
+       - name: Setup .NET
+         uses: actions/setup-dotnet@v4
+         with:
+            dotnet-version: 8.0.x
+
+       - name: publish application
+         run: dotnet publish Amazon.csproj -c release -o publish --no-restore
+       - name: deploy to azure webapp
+         uses: azure/webapps-deploy@v2
+         with:
+            app-name: 'gitamazonwebapp-001'
+            package: publish
+            
+
+
+
+
+        
+
+
