@@ -1,0 +1,98 @@
+####################################################
+# Terraform
+####################################################
+
+# Local .terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Terraform plan output
+*.tfplan
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Lock file (optional - keep if using version locking)
+#.terraform.lock.hcl
+
+
+####################################################
+# ASP.NET / .NET / Razor
+####################################################
+
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+
+# VS Code
+.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# IIS Express
+.vs/config/applicationhost.config
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Generated Razor files
+*.rz.scp.css
+*.g.cs
+*.generated.cs
+
+# Publish output
+publish/
+wwwroot/lib/
+
+####################################################
+# OS Files
+####################################################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+# Linux
+*~
